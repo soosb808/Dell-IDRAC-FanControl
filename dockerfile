@@ -14,4 +14,4 @@ ENV IDRAC_HOST=192.168.0.240 \
     IDRAC_PW=calvin \
     CHECK_INTERVAL=30
 
-CMD /opt/adaptivefancontrol.sh && crond
+CMD [/opt/adaptivefancontrol.sh && crond]
