@@ -1,3 +1,4 @@
+#!/bin/sh
 function get_temp {
   local TEMP=$(ipmitool -I lanplus -H $IDRAC_HOST -U $IDRAC_USER -P $IDRAC_PW sdr type temperature | grep Exhaust | grep -o -e '[0-9][0-9] degrees' | grep -o -e '[0-9][0-9]')
   echo $TEMP
