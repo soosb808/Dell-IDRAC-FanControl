@@ -9,32 +9,32 @@ function set_speed {
 
 TEMP=$(get_temp)
     if [ "$TEMP" -ge 0 ] && [ "$TEMP" -lt 35 ]; then
+        echo "Exhaust Temperature is $TEMP : Setting fan speed to 15%"
+        HEX=0x0f
+        set_speed
+    elif [ "$TEMP" -ge 35 ] && [ "$TEMP" -lt 40 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 20%"
         HEX=0x14
         set_speed
-    elif [ "$TEMP" -ge 35 ] && [ "$TEMP" -lt 40 ]; then
+    elif [ "$TEMP" -ge 40 ] && [ "$TEMP" -lt 45 ]; then
+        echo "Exhaust Temperature is $TEMP : Setting fan speed to 25%"
+        HEX=0x19
+        set_speed
+    elif [ "$TEMP" -ge 45 ] && [ "$TEMP" -lt 50 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 30%"
         HEX=0x1e
         set_speed
-    elif [ "$TEMP" -ge 40 ] && [ "$TEMP" -lt 45 ]; then
+    elif [ "$TEMP" -ge 50 ] && [ "$TEMP" -lt 55 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 40%"
         HEX=0x28
         set_speed
-    elif [ "$TEMP" -ge 45 ] && [ "$TEMP" -lt 50 ]; then
+    elif [ "$TEMP" -ge 55 ] && [ "$TEMP" -lt 60 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 50%"
         HEX=0x32
         set_speed
-    elif [ "$TEMP" -ge 50 ] && [ "$TEMP" -lt 55 ]; then
-        echo "Exhaust Temperature is $TEMP : Setting fan speed to 60%"
-        HEX=0x3c
-        set_speed
-    elif [ "$TEMP" -ge 55 ] && [ "$TEMP" -lt 60 ]; then
+    elif [ "$TEMP" -ge 60 ] && [ "$TEMP" -lt 70 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 70%"
         HEX=0x46
-        set_speed
-    elif [ "$TEMP" -ge 60 ] && [ "$TEMP" -lt 70 ]; then
-        echo "Exhaust Temperature is $TEMP : Setting fan speed to 80%"
-        HEX=0x50
         set_speed
     elif [ "$TEMP" -ge 70 ] && [ "$TEMP" -lt 80 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 90%"
