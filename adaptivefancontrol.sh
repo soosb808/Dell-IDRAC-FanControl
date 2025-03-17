@@ -14,14 +14,14 @@ TEMP=$(get_temp)
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 10%"
         HEX=0x0a 
     elif [ "$TEMP" -ge 40 ] && [ "$TEMP" -lt 45 ]; then
-        echo "Exhaust Temperature is $TEMP : Setting fan speed to 16%"
-        HEX=0x10
+        echo "Exhaust Temperature is $TEMP : Setting fan speed to 15%"
+        HEX=0x0F
     elif [ "$TEMP" -ge 45 ] && [ "$TEMP" -lt 50 ]; then
-        echo "Exhaust Temperature is $TEMP : Setting fan speed to 24%"
-        HEX=0x18
+        echo "Exhaust Temperature is $TEMP : Setting fan speed to 20%"
+        HEX=0x14
     elif [ "$TEMP" -ge 50 ] && [ "$TEMP" -lt 55 ]; then
-        echo "Exhaust Temperature is $TEMP : Setting fan speed to 30%"
-        HEX=0x1e
+        echo "Exhaust Temperature is $TEMP : Setting fan speed to 25%"
+        HEX=0x19
     elif [ "$TEMP" -ge 55 ] && [ "$TEMP" -lt 560 ]; then
         echo "Exhaust Temperature is $TEMP : Setting fan speed to 40%"
         HEX=0x28
